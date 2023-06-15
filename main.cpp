@@ -294,10 +294,7 @@ void featureSearchBackwardElimination(std::vector<std::vector<double>> &data,
               << " seconds\n";
 }
 
-int main() {
-    std::cout << std::fixed << std::setprecision(2);
-
-    std::string filename = "CS170_large_Data__21.txt";
+void runFeatureSearch(std::string &filename) {
     // std::string filename = "test.txt";
     std::vector<std::vector<double>> data = parseFile(filename);
 
@@ -312,7 +309,14 @@ int main() {
     }
 
     std::cout << "\n";
-    featureSearchForwardSelection(data);
+    // featureSearchForwardSelection(data);
 
-    // featureSearchBackwardElimination(data);
+    featureSearchBackwardElimination(data);
+}
+
+int main() {
+    std::cout << std::fixed << std::setprecision(2);
+
+    std::string filename = "CS170_XXXlarge_Data__6.txt";
+    runFeatureSearch(filename);
 }
