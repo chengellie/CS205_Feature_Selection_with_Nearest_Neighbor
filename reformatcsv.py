@@ -12,6 +12,8 @@ if __name__ == "__main__":
             if len(data) > 1:
                 data[-1][0] = 0 if data[-1][0] == "B" else 1
 
+    data.pop(0)
+
     reformatted = "reformatted_" + file.replace("csv", "txt")
     with open(reformatted, "w") as csv_file:
         csv_file.writelines("  ".join(str(j) for j in i) + "\n" for i in data)
