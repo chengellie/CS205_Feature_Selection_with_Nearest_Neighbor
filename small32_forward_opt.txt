@@ -1,0 +1,110 @@
+Dataset CS170_small_Data__32.txt has 10 features and 1000 instances
+Feature Search with Forward Selection
+Considering 1-feature sets
+	Using feature(s) { 1 } accuracy is 69.80%
+	Using feature(s) { 2 } accuracy is 70.20%
+	Using feature(s) { 3 } accuracy is 84.80%
+	Using feature(s) { 4 } accuracy is 71.40%
+	Using feature(s) { 5 } accuracy is 71.30%
+	Using feature(s) { 6 } accuracy is 70.10%
+	Using feature(s) { 7 } accuracy is 70.00%
+	Using feature(s) { 8 } accuracy is 70.50%
+	Using feature(s) { 9 } accuracy is 69.40%
+	Using feature(s) { 10 } accuracy is 71.90%
+
+	Best feature set is { 3 } with accuracy 84.80%
+	Elapsed runtime is 0.02 seconds
+
+Considering 2-feature sets
+	Using feature(s) { 3 1 } accuracy is 86.60%
+	Using feature(s) { 3 2 } accuracy is 85.50%
+	Using feature(s) { 3 4 } accuracy is 85.40%
+	Using feature(s) { 3 5 } accuracy is 96.50%
+	Using feature(s) { 3 6 } accuracy is 83.10%
+	Using feature(s) { 3 7 } accuracy is 84.70%
+	Using feature(s) { 3 8 } accuracy is 84.60%
+	Using feature(s) { 3 9 } accuracy is 85.00%
+	Using feature(s) { 3 10 } accuracy is 83.90%
+
+	Best feature set is { 3 5 } with accuracy 96.50%
+	Elapsed runtime is 0.04 seconds
+
+Considering 3-feature sets
+	Using feature(s) { 3 5 1 } accuracy is 95.40%
+	Using feature(s) { 3 5 2 } accuracy is 93.80%
+	Using feature(s) { 3 5 4 } accuracy is 94.00%
+	Using feature(s) { 3 5 6 } accuracy is 94.90%
+	Using feature(s) { 3 5 7 } accuracy is 94.10%
+	Using feature(s) { 3 5 8 } accuracy is 93.80%
+	Using feature(s) { 3 5 9 } accuracy is 94.00%
+	Using feature(s) { 3 5 10 } accuracy is 94.20%
+
+	Best feature set is { 3 5 1 } with accuracy 95.40%
+	Elapsed runtime is 0.06 seconds
+
+Considering 4-feature sets
+	Using feature(s) { 3 5 1 2 } accuracy is 91.40%
+	Using feature(s) { 3 5 1 4 } accuracy is 90.40%
+	Using feature(s) { 3 5 1 6 } accuracy is 89.20%
+	Using feature(s) { 3 5 1 7 } accuracy is 91.10%
+	Using feature(s) { 3 5 1 8 } accuracy is 91.00%
+	Using feature(s) { 3 5 1 9 } accuracy is 91.60%
+	Using feature(s) { 3 5 1 10 } accuracy is 91.40%
+
+	Best feature set is { 3 5 1 9 } with accuracy 91.60%
+	Elapsed runtime is 0.07 seconds
+
+Considering 5-feature sets
+	Using feature(s) { 3 5 1 9 2 } accuracy is 87.60%
+	Using feature(s) { 3 5 1 9 4 } accuracy is 86.40%
+	Using feature(s) { 3 5 1 9 6 } accuracy is 87.00%
+	Using feature(s) { 3 5 1 9 7 } accuracy is 87.80%
+	Using feature(s) { 3 5 1 9 8 } accuracy is 88.50%
+	Using feature(s) { 3 5 1 9 10 } accuracy is 88.60%
+
+	Best feature set is { 3 5 1 9 10 } with accuracy 88.60%
+	Elapsed runtime is 0.09 seconds
+
+Considering 6-feature sets
+	Using feature(s) { 3 5 1 9 10 2 } accuracy is 84.00%
+	Using feature(s) { 3 5 1 9 10 4 } accuracy is 85.00%
+	Using feature(s) { 3 5 1 9 10 6 } accuracy is 84.70%
+	Using feature(s) { 3 5 1 9 10 7 } accuracy is 85.30%
+	Using feature(s) { 3 5 1 9 10 8 } accuracy is 83.30%
+
+	Best feature set is { 3 5 1 9 10 7 } with accuracy 85.30%
+	Elapsed runtime is 0.10 seconds
+
+Considering 7-feature sets
+	Using feature(s) { 3 5 1 9 10 7 2 } accuracy is 80.50%
+	Using feature(s) { 3 5 1 9 10 7 4 } accuracy is 81.90%
+	Using feature(s) { 3 5 1 9 10 7 6 } accuracy is 81.40%
+	Using feature(s) { 3 5 1 9 10 7 8 } accuracy is 81.90%
+
+	Best feature set is { 3 5 1 9 10 7 4 } with accuracy 81.90%
+	Elapsed runtime is 0.11 seconds
+
+Considering 8-feature sets
+	Using feature(s) { 3 5 1 9 10 7 4 2 } accuracy is 78.50%
+	Using feature(s) { 3 5 1 9 10 7 4 6 } accuracy is 81.60%
+	Using feature(s) { 3 5 1 9 10 7 4 8 } accuracy is 80.90%
+
+	Best feature set is { 3 5 1 9 10 7 4 6 } with accuracy 81.60%
+	Elapsed runtime is 0.12 seconds
+
+Considering 9-feature sets
+	Using feature(s) { 3 5 1 9 10 7 4 6 2 } accuracy is 78.00%
+	Using feature(s) { 3 5 1 9 10 7 4 6 8 } accuracy is 79.30%
+
+	Best feature set is { 3 5 1 9 10 7 4 6 8 } with accuracy 79.30%
+	Elapsed runtime is 0.13 seconds
+
+Considering 10-feature sets
+	Using feature(s) { 3 5 1 9 10 7 4 6 8 2 } accuracy is 77.00%
+
+	Best feature set is { 3 5 1 9 10 7 4 6 8 2 } with accuracy 77.00%
+	Elapsed runtime is 0.14 seconds
+
+
+Best overall feature set is { 3 5 } with accuracy 96.50%
+Total runtime is 0.14 seconds

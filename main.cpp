@@ -57,17 +57,20 @@ double euclideanDistance(int instanceIdx1, int instanceIdx2,
         //            : std::to_string(instanceIdx2) + "-" +
         //                  std::to_string(instanceIdx1);
         // if (calculated.find(key) != calculated.end()) {
-        //     std::cout << "found " << key << std::endl;
-        //     squaredSums += calculated[key];
+        // std::cout << "found " << key << " " << calculated[key] <<
+        // std::endl;
+        // squaredSums += calculated[key];
         // } else {
         double diff = (data[instanceIdx1][features.at(i)] -
                        data[instanceIdx2][features.at(i)]);
         double squared = diff * diff;
         squaredSums += squared;
-        calculated[key] = squared;
+        // calculated[key] = squared;
+        // std::cout << "insert " << key << " " << squared << std::endl;
         // }
     }
     return std::sqrt(squaredSums);
+    // return squaredSums;
 }
 
 bool nearestNeighbor(int instanceIdx, std::vector<std::vector<double>> &data,
@@ -164,7 +167,19 @@ std::string getFeatureSetStr(std::vector<int> &features) {
     return ret;
 }
 
-void featureSearchForwardSelection(std::vector<std::vector<double>> &data) {
+std::vector<std::vector<double>> sampleData(
+    std::vector<std::vector<double>> &data, double sampling) {
+    int numInstances = floor(sampling * data.size());
+
+    std::vector<std::vector<double>> sampled(numInstances);
+    for (unsigned i = 0; i < sampled.size(); i++) {
+        sampled.at(i) = data.at(i);
+    }
+    return sampled;
+}
+
+void featureSearchForwardSelection(std::vector<std::vector<double>> &data,
+                                   double sampling = 1) {
     std::cout << "Feature Search with Forward Selection" << std::endl;
 
     clock_t start = clock();
@@ -217,7 +232,8 @@ void featureSearchForwardSelection(std::vector<std::vector<double>> &data) {
               << " seconds\n";
 }
 
-void featureSearchBackwardElimination(std::vector<std::vector<double>> &data) {
+void featureSearchBackwardElimination(std::vector<std::vector<double>> &data,
+                                      double sampling = 1) {
     std::cout << "Feature Search with Backward Elimination" << std::endl;
 
     clock_t start = clock();
@@ -281,14 +297,22 @@ void featureSearchBackwardElimination(std::vector<std::vector<double>> &data) {
 int main() {
     std::cout << std::fixed << std::setprecision(2);
 
-    std::string filename = "CS170_large_Data__33.txt";
+    std::string filename = "CS170_large_Data__21.txt";
     // std::string filename = "test.txt";
     std::vector<std::vector<double>> data = parseFile(filename);
-    // printData(data);
+
     std::cout << "Dataset " << filename << " has " << data[0].size() - 1
-              << " features and " << data.size() << " instances\n\n";
+              << " features and " << data.size() << " instances\n";
 
-    // featureSearchForwardSelection(data);
+    double samplingRate = 1;
+    if (samplingRate < 1) {
+        data = sampleData(data, samplingRate);
+        std::cout << "Applied sampling rate of " << samplingRate
+                  << ", sampled dataset has " << data.size() << " instances\n";
+    }
 
-    featureSearchBackwardElimination(data);
+    std::cout << "\n";
+    featureSearchForwardSelection(data);
+
+    // featureSearchBackwardElimination(data);
 }
