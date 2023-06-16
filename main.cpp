@@ -294,14 +294,13 @@ void featureSearchBackwardElimination(std::vector<std::vector<double>> &data,
               << " seconds\n";
 }
 
-void runFeatureSearch(std::string &filename) {
-    // std::string filename = "test.txt";
+void runFeatureSearch(std::string &filename, std::string method) {
     std::vector<std::vector<double>> data = parseFile(filename);
 
     std::cout << "Dataset " << filename << " has " << data[0].size() - 1
               << " features and " << data.size() << " instances\n";
 
-    double samplingRate = 1;
+    double samplingRate = 0.5;
     if (samplingRate < 1) {
         data = sampleData(data, samplingRate);
         std::cout << "Applied sampling rate of " << samplingRate
@@ -309,14 +308,27 @@ void runFeatureSearch(std::string &filename) {
     }
 
     std::cout << "\n";
-    // featureSearchForwardSelection(data);
-
-    featureSearchBackwardElimination(data);
+    if (method == "forward")
+        featureSearchForwardSelection(data);
+    else if (method == "backward")
+        featureSearchBackwardElimination(data);
 }
 
 int main() {
     std::cout << std::fixed << std::setprecision(2);
 
+    // std::string filename = "CS170_small_Data__21.txt";
+    // std::string filename = "CS170_small_Data__32.txt";
+    // std::string filename = "CS170_small_Data__33.txt";
+
+    // std::string filename = "CS170_large_Data__21.txt";
+    // std::string filename = "CS170_large_Data__32.txt";
+    // std::string filename = "CS170_large_Data__33.txt";
+
     std::string filename = "CS170_XXXlarge_Data__6.txt";
-    runFeatureSearch(filename);
+
+    // std::string filename = "clean_breast_cancer_data.txt";
+
+    // runFeatureSearch(filename, "forward");
+    runFeatureSearch(filename, "backward");
 }
